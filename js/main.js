@@ -9,8 +9,6 @@ document.getElementById("create-ticket").addEventListener("click", function(){
     // Rimozione classe d-none per far comparire il bottom-container
     document.getElementById("bottom-container").classList.remove('d-none');
 
-
-
     let newDistance=parseInt(distance.value);
 
     let ticketPrice=newDistance * 0.27;
@@ -28,33 +26,30 @@ document.getElementById("create-ticket").addEventListener("click", function(){
         ticketPromo = "Biglietto Standard";
     };
 
-
-
-
     document.getElementById("ticket-username").innerHTML=username.value;
-    username.value="";
+    // username.value="";
 
     document.getElementById("ticket-price").innerHTML=ticketPrice.toFixed(2) + "€";
+    // distance.value="";
 
     document.getElementById("ticket-promo").innerHTML=ticketPromo;
 
     document.getElementById("number-wagon").innerHTML=Math.floor((Math.random()*10)+1);
     document.getElementById("ticket-number").innerHTML=Math.floor(Math.random()*100000);
-
-
 });
 
 
+// Funzione per aggiungere la classe d-none al bottom container e per resettare le informazioni
 document.getElementById("delete-all").addEventListener("click", function(){
-    // document.getElementById("bottom-container").classList.add('d-none');
+    document.getElementById("bottom-container").classList.add('d-none');
     username.value="";
     userAge.value="";
     distance.value="";
+    document.getElementById("ticket-username").innerHTML="";
     document.getElementById("ticket-price").innerHTML="";
     document.getElementById("ticket-promo").innerHTML="";
     document.getElementById("number-wagon").innerHTML="";
     document.getElementById("ticket-number").innerHTML="";
-
 })
 
 
