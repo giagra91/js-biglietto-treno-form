@@ -1,62 +1,60 @@
-// Costante per il nome dell'utente
-const userName = document.getElementById("user-name");
+const username = document.getElementById("user-name");
 
-// Costante per la distanza da percorrere dall'utente
-const distance =  document.getElementById("user-distance").value;
-const valueDistance = parseFloat(distance);
+const distance = document.getElementById("user-distance");
 
-// Costante per l'età dell'utente
 const userAge = document.getElementById("user-age");
 
-// Variabile per il costo del biglietto
-let ticketPrice = valueDistance * 0.27; 
-
-// Condizioni per sconto clienti
-if (userAge.value = "Minorenne"){ // condizione se il cliente è minorenne
-    ticketPrice = (ticketPrice * 0.83);
-} else if (userAge.value = "Over 65 anni") {  // condizione se il cliente ha più di 65 anni
-    ticketPrice = (ticketPrice * 0.67);
-} else if (userAge.value = "Maggiorenne"){ // condizione per tutti gli altri casi
-    ticketPrice = ticketPrice;
-};
-
 document.getElementById("create-ticket").addEventListener("click", function(){
+    
     // Rimozione classe d-none per far comparire il bottom-container
     document.getElementById("bottom-container").classList.remove('d-none');
-    // aggiunta nome passeggero
-    let newUserLi = document.createElement("li");
-    const newUsername = document.getElementById("user-name");
-    newUserLi.innerHTML = `${newUsername.value}`;
-    document.getElementById("ticket-username").append(newUserLi);
-    newUsername.value ="";
+
+
+
+    let newDistance=parseInt(distance.value);
+
+    let ticketPrice=newDistance * 0.27;
+    let ticketPromo;
+
+        // Condizioni per sconto clienti
+    if (userAge.value == "young"){ // condizione se il cliente è minorenne
+        ticketPrice = (ticketPrice * 0.83);
+        ticketPromo = "Biglietto minorenni";
+    } else if (userAge.value == "older") {  // condizione se il cliente ha più di 65 anni
+        ticketPrice = (ticketPrice * 0.67);
+        ticketPromo = "Biglietto over 65 anni";
+    } else if (userAge.value == "standard"){ // condizione per tutti gli altri casi
+        ticketPrice = ticketPrice;
+        ticketPromo = "Biglietto Standard";
+    };
 
 
 
 
+    document.getElementById("ticket-username").innerHTML=username.value;
+    username.value="";
 
+    document.getElementById("ticket-price").innerHTML=ticketPrice.toFixed(2) + "€";
 
+    document.getElementById("ticket-promo").innerHTML=ticketPromo;
 
+    document.getElementById("number-wagon").innerHTML=Math.floor((Math.random()*10)+1);
+    document.getElementById("ticket-number").innerHTML=Math.floor(Math.random()*100000);
 
-
-
-
-
-    
-    console.log(userAge.value);
-    console.log(ticketPrice);
-    console.log(valueDistance);
-
-    // let newLiPrice = document.createElement("li");
-    // const newUsername = document.getElementById("user-name");
-    // newUserLi.innerHTML = `${newUsername.value}`;
-    // document.getElementById("ticket-username").append(newUserLi);
-    // newUsername.value ="";
 
 });
 
 
 document.getElementById("delete-all").addEventListener("click", function(){
     // document.getElementById("bottom-container").classList.add('d-none');
+    username.value="";
+    userAge.value="";
+    distance.value="";
+    document.getElementById("ticket-price").innerHTML="";
+    document.getElementById("ticket-promo").innerHTML="";
+    document.getElementById("number-wagon").innerHTML="";
+    document.getElementById("ticket-number").innerHTML="";
+
 })
 
 
