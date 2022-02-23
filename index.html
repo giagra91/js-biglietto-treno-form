@@ -21,10 +21,13 @@
 <body>
 
     <main>
+        <!-- Sezione principale -->
         <section class="container-fluid text-center py-3" id="main-container">
+            <!-- Container superiore -->
             <div id="top-container">
                 <h1 class="text-uppercase text-white fw-bold pb-3">Calcola il prezzo del tuo biglietto</h1>
                 <div class="container my-3 py-3" id="user-data">
+                    <!-- Riferimenti input -->
                     <div class="row pb-3">
                         <div class="col">
                             <label for="user-name">Nome Cognome</label>                        
@@ -36,6 +39,7 @@
                             <label for="user-age">Fascia d'età</label>                        
                         </div>
                     </div>
+                    <!-- Input -->
                     <div class="row mb-5">
                         <div class="col">
                             <input class="text-center rounded" type="text" id="user-name">
@@ -45,9 +49,9 @@
                         </div>                    
                         <div class="col">
                             <select class="text-center rounded bg-light" name="age-user" id="user-age">
-                                <option value="underage">Minorenne</option>
-                                <option value="adult">Maggiorenne</option>
-                                <option value="over 65">Over 65 anni</option>
+                                <option value="Minorenne">Minorenne</option>
+                                <option value="Maggiorenne">Maggiorenne</option>
+                                <option value="over 65 anni">Over 65 anni</option>
                             </select>
                         </div>
                     </div>
@@ -75,14 +79,14 @@
                         <div class="col-4">
                             <div class="bg-secondary">
                                 <h3 class="text-uppercase text-dark">Nome passeggeri</h3>
-                                <p id="ticket-user-name">
-                                </p>
+                                <ul class="list-unstyled" id="ticket-username">
+                                </ul>
                             </div>
                         </div>
                         <div class="col-2">
                                 <h3 class="text-dark fs-5">Offerta</h3>
-                                <p id="ticket-promo">
-                                </p>
+                                <ul id="ticket-promo">
+                                </ul>
                         </div>
                         <div class="col-2">
                             <h3 class="text-dark fs-5">Carrozza</h3>
