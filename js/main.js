@@ -14,6 +14,10 @@ document.getElementById("create-ticket").addEventListener("click", function(){
     let ticketPrice=newDistance * 0.27;
     let ticketPromo;
 
+    if (isNaN(newDistance)){
+        alert("Il valore che hai inserito, riferito alla distanza, non è valido. Inserisci solo numeri!");
+    }
+
         // Condizioni per sconto clienti
     if (userAge.value == "young"){ // condizione se il cliente è minorenne
         ticketPrice = (ticketPrice * 0.83);
