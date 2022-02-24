@@ -38,7 +38,7 @@ document.getElementById("create-ticket").addEventListener("click", function(){
 
     document.getElementById("ticket-promo").innerHTML=ticketPromo;
 
-    document.getElementById("number-wagon").innerHTML=Math.floor((Math.random()*10)+1);
+    document.getElementById("number-wagon").innerHTML=Math.floor((Math.random()*15)+1);
     document.getElementById("ticket-number").innerHTML=Math.floor(Math.random()*100000);
 });
 
